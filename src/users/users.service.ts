@@ -11,4 +11,8 @@ export class UsersService {
     const user = this.repository.create({ email, password });
     return this.repository.save(user);
   }
+
+  async findUserByEmail(email: string): Promise<User | undefined> {
+    return this.repository.findOneBy({ email: email });
+  }
 }

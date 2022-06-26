@@ -1,0 +1,19 @@
+### User Registration with LocalStrategy
+POST http://localhost:3000/auth/localStrategy/signup
+content-type: application/json
+
+{
+  "email": "123456@gmail.com",
+  "password": "123456"
+}
+
+
+### User Login with LocalStrategy
+POST http://localhost:3000/auth/localStrategy/login
+content-type: application/json
+
+{
+  "email": "123456@gmail.com",
+  "password": "123456"
+}
+
