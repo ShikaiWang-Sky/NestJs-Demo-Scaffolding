@@ -1,0 +1,42 @@
+# curl -i http://localhost:3000/auth/profile -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyMzQ1NkBnbWFpbC5jb20iLCJ1c2VySWQiOjIsImFkbWluIjp0cnVlLCJpYXQiOjE2NTYyNzc0MDUsImV4cCI6MTY1NjM2MzgwNX0.IdCd0kX-noSA_7Jao-qkukodEP3jYA9sOijAqcIPwuU"
+GET base_url/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyMzQ1NkBnbWFpbC5jb20iLCJ1c2VySWQiOjIsImFkbWluIjp0cnVlLCJpYXQiOjE2NTYyNzc0MDUsImV4cCI6MTY1NjM2MzgwNX0.IdCd0kX-noSA_7Jao-qkukodEP3jYA9sOijAqcIPwuU
+
+###
+
+### User Registration with LocalStrategy
+POST http://localhost:3000/auth/localStrategy/signup
+content-type: application/json
+
+{
+  "email": "123456@gmail.com",
+  "password": "123456"
+}
+
+
+### User Login with LocalStrategy
+POST http://localhost:3000/auth/localStrategy/login
+content-type: application/json
+
+{
+  "email": "123456@gmail.com",
+  "password": "123456"
+}
+
+### User Login and return Jwt Token
+POST http://localhost:3000/auth/login
+content-type: application/json
+
+{
+  "email": "123456@gmail.com",
+  "password": "123456"
+}
+
+> {%
+  client.global.set("jwt_token", response.body.access_token);
+%}
+
+### Get User's Profile
+GET {{base_url}}/auth/profile
+content-type: application/json
+Authorization: Bearer {{jwt_token}}
