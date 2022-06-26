@@ -88,3 +88,20 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## Hints
+
+In order to skip jwt authentication, you have to use @Public on the controller function.
+
+You should create two env file as .env.development and .env.test, here is the example of .env.development:
+
+```
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=postgres
+DB_PASSWORD=123456
+DB_DATABASE=dev
+COOKIE_KEY=sky_development
+PASSWORD_SALT=sky_development
+JWT_SECRET_KEY=sky_development
+```
