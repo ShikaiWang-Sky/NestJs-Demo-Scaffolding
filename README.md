@@ -32,6 +32,23 @@
 $ npm install
 ```
 
+## Running postgresql on docker
+
+```bash
+$ docker run --name postgres14.0 -e POSTGRES_PASSWORD=postgres -p 5432:5432 -v /Users/sky/pgdata:/var/lib/postgresql/data -d postgres:latest
+````
+--name postgres14.0 指定容器的名称
+
+-e POSTGRES_PASSWORD=postgres  设置环境变量，指定数据库的用户名和密码，用户名为postgres，密码为：postgres
+
+-p 5432:5432  指定端口：前面为映射的端口号，后面为镜像的端口号
+
+-v /Users/sky/pgdata:/var/lib/postgresql/data 指定宿主机的目录和原数据目录
+
+-d postgres:latest  指定镜像名称以及版本号 
+
+PS：postgres镜像默认的用户名为postgres
+
 ## Running the app
 
 ```bash
