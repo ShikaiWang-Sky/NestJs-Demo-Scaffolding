@@ -1,0 +1,9 @@
+### UserEntity Registration
+POST http://localhost:3000/users/signup
+content-type: application/json
+
+{
+  "email": "123456@gmail.com",
+  "password": "123456"
+}
+
