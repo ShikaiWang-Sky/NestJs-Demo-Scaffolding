@@ -1,11 +1,5 @@
-# curl -i http://localhost:3000/auth/profile -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyMzQ1NkBnbWFpbC5jb20iLCJ1c2VySWQiOjIsImFkbWluIjp0cnVlLCJpYXQiOjE2NTYyNzc0MDUsImV4cCI6MTY1NjM2MzgwNX0.IdCd0kX-noSA_7Jao-qkukodEP3jYA9sOijAqcIPwuU"
-GET base_url/auth/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyMzQ1NkBnbWFpbC5jb20iLCJ1c2VySWQiOjIsImFkbWluIjp0cnVlLCJpYXQiOjE2NTYyNzc0MDUsImV4cCI6MTY1NjM2MzgwNX0.IdCd0kX-noSA_7Jao-qkukodEP3jYA9sOijAqcIPwuU
-
-###
-
 ### User Registration with LocalStrategy
-POST http://localhost:3000/auth/localStrategy/signup
+POST {{base_url}}/auth/localStrategy/signup
 content-type: application/json
 
 {
@@ -15,7 +9,7 @@ content-type: application/json
 
 
 ### User Login with LocalStrategy
-POST http://localhost:3000/auth/localStrategy/login
+POST {{base_url}}/auth/localStrategy/login
 content-type: application/json
 
 {
@@ -24,7 +18,7 @@ content-type: application/json
 }
 
 ### User Login and return Jwt Token
-POST http://localhost:3000/auth/login
+POST {{base_url}}/auth/login
 content-type: application/json
 
 {
