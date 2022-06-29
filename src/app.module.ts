@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import cookieSession = require('cookie-session');
 import { User } from './users/entities/user.entity';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
+import { StripeModule } from './stripe/stripe.module';
 
 @Module({
   imports: [
@@ -34,6 +35,7 @@ import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
       },
     }),
     AuthModule,
+    StripeModule,
   ],
   controllers: [AppController],
   providers: [
